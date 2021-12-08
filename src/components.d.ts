@@ -8,7 +8,13 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface FredAdd {
     }
+    interface FredButton {
+        "url": string;
+    }
     interface FredHome {
+    }
+    interface FredIcon {
+        "name": string;
     }
     interface FredRoot {
     }
@@ -20,11 +26,23 @@ declare global {
         prototype: HTMLFredAddElement;
         new (): HTMLFredAddElement;
     };
+    interface HTMLFredButtonElement extends Components.FredButton, HTMLStencilElement {
+    }
+    var HTMLFredButtonElement: {
+        prototype: HTMLFredButtonElement;
+        new (): HTMLFredButtonElement;
+    };
     interface HTMLFredHomeElement extends Components.FredHome, HTMLStencilElement {
     }
     var HTMLFredHomeElement: {
         prototype: HTMLFredHomeElement;
         new (): HTMLFredHomeElement;
+    };
+    interface HTMLFredIconElement extends Components.FredIcon, HTMLStencilElement {
+    }
+    var HTMLFredIconElement: {
+        prototype: HTMLFredIconElement;
+        new (): HTMLFredIconElement;
     };
     interface HTMLFredRootElement extends Components.FredRoot, HTMLStencilElement {
     }
@@ -34,20 +52,30 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "fred-add": HTMLFredAddElement;
+        "fred-button": HTMLFredButtonElement;
         "fred-home": HTMLFredHomeElement;
+        "fred-icon": HTMLFredIconElement;
         "fred-root": HTMLFredRootElement;
     }
 }
 declare namespace LocalJSX {
     interface FredAdd {
     }
+    interface FredButton {
+        "url"?: string;
+    }
     interface FredHome {
+    }
+    interface FredIcon {
+        "name"?: string;
     }
     interface FredRoot {
     }
     interface IntrinsicElements {
         "fred-add": FredAdd;
+        "fred-button": FredButton;
         "fred-home": FredHome;
+        "fred-icon": FredIcon;
         "fred-root": FredRoot;
     }
 }
@@ -56,7 +84,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "fred-add": LocalJSX.FredAdd & JSXBase.HTMLAttributes<HTMLFredAddElement>;
+            "fred-button": LocalJSX.FredButton & JSXBase.HTMLAttributes<HTMLFredButtonElement>;
             "fred-home": LocalJSX.FredHome & JSXBase.HTMLAttributes<HTMLFredHomeElement>;
+            "fred-icon": LocalJSX.FredIcon & JSXBase.HTMLAttributes<HTMLFredIconElement>;
             "fred-root": LocalJSX.FredRoot & JSXBase.HTMLAttributes<HTMLFredRootElement>;
         }
     }

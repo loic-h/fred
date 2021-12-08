@@ -9,9 +9,9 @@ export class FredHome {
   render() {
     return (
       <div class="app-home">
-        <stencil-route-link url="/add">
-          <button>Add</button>
-        </stencil-route-link>
+        <fred-button url="/add">
+          <fred-icon name="add"></fred-icon>
+        </fred-button>
       </div>
     );
   }
