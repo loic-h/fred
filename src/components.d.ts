@@ -5,62 +5,59 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
 export namespace Components {
-    interface AppHome {
+    interface FredAdd {
     }
-    interface AppProfile {
-        "match": MatchResults;
+    interface FredHome {
     }
-    interface AppRoot {
+    interface FredRoot {
     }
 }
 declare global {
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
+    interface HTMLFredAddElement extends Components.FredAdd, HTMLStencilElement {
     }
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
+    var HTMLFredAddElement: {
+        prototype: HTMLFredAddElement;
+        new (): HTMLFredAddElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
+    interface HTMLFredHomeElement extends Components.FredHome, HTMLStencilElement {
     }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLFredHomeElement: {
+        prototype: HTMLFredHomeElement;
+        new (): HTMLFredHomeElement;
     };
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
+    interface HTMLFredRootElement extends Components.FredRoot, HTMLStencilElement {
     }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
+    var HTMLFredRootElement: {
+        prototype: HTMLFredRootElement;
+        new (): HTMLFredRootElement;
     };
     interface HTMLElementTagNameMap {
-        "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
-        "app-root": HTMLAppRootElement;
+        "fred-add": HTMLFredAddElement;
+        "fred-home": HTMLFredHomeElement;
+        "fred-root": HTMLFredRootElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
+    interface FredAdd {
     }
-    interface AppProfile {
-        "match"?: MatchResults;
+    interface FredHome {
     }
-    interface AppRoot {
+    interface FredRoot {
     }
     interface IntrinsicElements {
-        "app-home": AppHome;
-        "app-profile": AppProfile;
-        "app-root": AppRoot;
+        "fred-add": FredAdd;
+        "fred-home": FredHome;
+        "fred-root": FredRoot;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "fred-add": LocalJSX.FredAdd & JSXBase.HTMLAttributes<HTMLFredAddElement>;
+            "fred-home": LocalJSX.FredHome & JSXBase.HTMLAttributes<HTMLFredHomeElement>;
+            "fred-root": LocalJSX.FredRoot & JSXBase.HTMLAttributes<HTMLFredRootElement>;
         }
     }
 }
