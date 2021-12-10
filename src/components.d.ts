@@ -19,6 +19,8 @@ export namespace Components {
     }
     interface FredNav {
     }
+    interface FredPage {
+    }
     interface FredRoot {
     }
 }
@@ -53,6 +55,12 @@ declare global {
         prototype: HTMLFredNavElement;
         new (): HTMLFredNavElement;
     };
+    interface HTMLFredPageElement extends Components.FredPage, HTMLStencilElement {
+    }
+    var HTMLFredPageElement: {
+        prototype: HTMLFredPageElement;
+        new (): HTMLFredPageElement;
+    };
     interface HTMLFredRootElement extends Components.FredRoot, HTMLStencilElement {
     }
     var HTMLFredRootElement: {
@@ -65,6 +73,7 @@ declare global {
         "fred-home": HTMLFredHomeElement;
         "fred-icon": HTMLFredIconElement;
         "fred-nav": HTMLFredNavElement;
+        "fred-page": HTMLFredPageElement;
         "fred-root": HTMLFredRootElement;
     }
 }
@@ -82,6 +91,8 @@ declare namespace LocalJSX {
     }
     interface FredNav {
     }
+    interface FredPage {
+    }
     interface FredRoot {
     }
     interface IntrinsicElements {
@@ -90,6 +101,7 @@ declare namespace LocalJSX {
         "fred-home": FredHome;
         "fred-icon": FredIcon;
         "fred-nav": FredNav;
+        "fred-page": FredPage;
         "fred-root": FredRoot;
     }
 }
@@ -102,6 +114,7 @@ declare module "@stencil/core" {
             "fred-home": LocalJSX.FredHome & JSXBase.HTMLAttributes<HTMLFredHomeElement>;
             "fred-icon": LocalJSX.FredIcon & JSXBase.HTMLAttributes<HTMLFredIconElement>;
             "fred-nav": LocalJSX.FredNav & JSXBase.HTMLAttributes<HTMLFredNavElement>;
+            "fred-page": LocalJSX.FredPage & JSXBase.HTMLAttributes<HTMLFredPageElement>;
             "fred-root": LocalJSX.FredRoot & JSXBase.HTMLAttributes<HTMLFredRootElement>;
         }
     }

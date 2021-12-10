@@ -8,11 +8,8 @@ import { Component, h } from '@stencil/core';
 export class FredHome {
   render() {
     return (
-      <div class="fred-home">
-        <main>
-
-        </main>
-        <fred-nav class="bottom-nav">
+      <fred-page class="fred-home">
+        <fred-nav slot="bottom-nav">
           <fred-button slot="item-left" url="/add">
             <fred-icon name="search" size="s"></fred-icon>
           </fred-button>
@@ -23,7 +20,7 @@ export class FredHome {
             <fred-icon name="add" size="s"></fred-icon>
           </fred-button>
         </fred-nav>
-      </div>
+      </fred-page>
     );
   }
 }

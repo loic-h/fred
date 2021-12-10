@@ -2,14 +2,10 @@
   @include vertical-flex;
 }
 
-.fred-home {
+.fred-page {
   @include vertical-flex;
 }
 
 main {
   flex-grow: 1;
-}
-
-.bottom-nav {
-  justify-self: flex-end;
 }
