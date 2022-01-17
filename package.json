@@ -2,11 +2,13 @@
   "name": "memorit",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port $PORT",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@googleapis/sheets": "^0.3.0",
+    "@vercel/node": "^1.12.1",
     "preact": "^10.5.15"
   },
   "devDependencies": {
