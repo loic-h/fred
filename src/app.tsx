@@ -1,20 +1,22 @@
-import { Logo } from './logo'
+import { Component } from 'preact';
+import Router from 'preact-router';
+import sheetsApi from './api/sheets';
+import Home from './pages/Home';
+export class App extends Component {
+  async componentDidMount() {
+    console.log('componentDidMount')
+    try {
+      const sheets = await sheetsApi.get();
+    } catch(e) {
+      console.log(e);
+    }
+  }
 
-export function App() {
-  return (
-    <>
-      <Logo />
-      <p>Hello Vite + Preact!</p>
-      <p>
-        <a
-          class="link"
-          href="https://preactjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Preact
-        </a>
-      </p>
-    </>
-  )
+  render() {
+    return (
+      <Router>
+        <Home path="/" />
+      </Router>
+    )
+  }
 }
