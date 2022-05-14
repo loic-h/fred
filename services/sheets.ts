@@ -8,33 +8,29 @@ const gsheets = sheets({
 });
 
 export default async (): Promise<unknown[] | undefined> => {
-  try {
-    const spreadsheets = await gsheets.spreadsheets.get({
-      spreadsheetId: sheetId
-    });
-    if (spreadsheets?.data?.sheets) {
-      const promises = spreadsheets?.data?.sheets.map(sheet => {
-        const title = sheet?.properties?.title;
-        return new Promise((resolve, reject) => {
-          gsheets.spreadsheets.values.get({
-            spreadsheetId: sheetId,
-            range: `${title}!A1:B`
-          }, (err, res) => {
-            if (err) {
-              reject(err);
-              return;
-            }
-            resolve({
-              title,
-              data: res?.data.values
-            });
+  const spreadsheets = await gsheets.spreadsheets.get({
+    spreadsheetId: sheetId
+  });
+  if (spreadsheets?.data?.sheets) {
+    const promises = spreadsheets?.data?.sheets.map(sheet => {
+      const title = sheet?.properties?.title;
+      return new Promise((resolve, reject) => {
+        gsheets.spreadsheets.values.get({
+          spreadsheetId: sheetId,
+          range: `${title}!A1:B`
+        }, (err, res) => {
+          if (err) {
+            reject(err);
+            return;
+          }
+          resolve({
+            title,
+            data: res?.data.values
           });
-        })
-      });
+        });
+      })
+    });
 
-      return await Promise.all(promises);
-    }
-  } catch(err) {
-    throw err;
+    return await Promise.all(promises);
   }
 };

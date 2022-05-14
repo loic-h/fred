@@ -5,9 +5,6 @@ const get = async () => {
   } catch(e) {
     console.log(e);
   }
-
 };
 
-export default {
-  get
-};
+export default { get };
