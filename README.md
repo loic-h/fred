@@ -1,0 +1,7 @@
+# Memorit
+
+# Develop
+
+```
+$ vercel dev
+```
