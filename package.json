@@ -9,7 +9,9 @@
   "dependencies": {
     "@googleapis/sheets": "^0.3.0",
     "@vercel/node": "^1.12.1",
-    "preact": "^10.5.15"
+    "preact": "^10.5.15",
+    "preact-router": "^4.0.1",
+    "unistore": "^3.5.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.1.5",
